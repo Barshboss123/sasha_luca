@@ -23,8 +23,7 @@ from features import build_player_histories, symmetrize, build_diff_features
 from model import train, load_model, get_feature_cols, predict_proba
 
 RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results")
-TRAIN_CUTOFF = 20230101   # Train on 2000–2022, test on 2023–2024
-TEST_YEAR_START = 2023
+TRAIN_CUTOFF = 20260101   # Train on 2000–2025, test on 2026
 
 RG_NAME_PATTERNS = ["Roland Garros", "French Open"]
 
@@ -43,7 +42,7 @@ def main():
     # ------------------------------------------------------------------
     print("=" * 60)
     print("Loading ATP match data (2000–2024)...")
-    raw = load_atp_matches(2000, 2024)
+    raw = load_atp_matches(2000, 2026)
     print(f"Total matches: {len(raw):,}")
 
     # Clean
